@@ -1,0 +1,221 @@
+<div class="header" [@collapsible]="scrollEvent?'*':'void'"
+(clickOutside)="clickOut()">
+  <div class="container">
+    <div class="left-section">
+      <button class="hamburger-menu" (click)="isOpen()">
+        &#9776;
+      </button>
+      <div [class.menu-options]="this.viewport"
+       [class.menu-left]="!this.viewport">
+        <button (click)="openGlasessMenuDeatails()">
+          {{'glasses' | translate}}
+        </button>
+        <button (click)="openSunGlasessMenuDeatails()">
+          {{'sunglasses' | translate}}
+        </button>
+        <button (click)="opencollectionMenuDeatails()" >
+          {{'collection' | translate}}
+        </button>
+        <a routerLink="/jurnals">
+            <button>
+              {{'journal' | translate}}
+            </button>
+        </a>
+        <a routerLink="/about">
+            <button>
+              {{'about' | translate}}
+            </button>
+        </a>
+        <select class="selector" title="Language" *ngIf="viewport"
+        (change)="changeLang($event)">
+          <option value="en">English</option>
+          <option value="pe">Persian</option>
+        </select>
+      </div>
+
+    </div>
+
+      <div class="middle-section">
+        <a routerLink="/">
+          <h1>ic! berlin</h1>
+        </a>
+      </div>
+
+    <div class="right">
+      <select class="select-lang" title="Language"
+       (change)="changeLang($event)">
+        <option [selected]="lang ==='en'" value="en">
+          English
+        </option>
+        <option [selected]="lang ==='pe'" value="pe"
+        >فارسی
+        </option>
+      </select>
+      <a routerLink="/stores">
+        <button>
+          {{'stores' | translate}}
+        </button>
+      </a>
+      <a routerLink="/for-opticians">
+        <button>
+          {{'for opticians' | translate}}
+        </button>
+      </a>
+      <a routerLink="/search" class="search">
+        <button class="search">
+          <mat-icon>
+            search
+          </mat-icon>
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <div
+    [ngClass]="{'header-middle-active':activeMenu,'header-middle':!activeMenu}"
+    [ngClass]="{'header-middle-active':viewport,'header-middle':!viewport}">
+
+        <div class="middle-txt"
+        [@remove]="scrollEvent?'void':'*'">
+          <h1 class="text">
+            <span class="span">
+              Style.
+            </span>
+            Made in Germany
+          </h1>
+          <button class="middle-btn"
+          (click)="goToHomePage('#discover')" >
+            {{'discover' | translate}} &rarr;
+          </button>
+        </div>
+
+      <div [ngClass]="{'menu-active':activeMenu}"
+       *ngIf="glasessMenu"
+       [@fadeContent]="glasessMenu?'*':'void'">
+        <div class="menu-main">
+          <nav>
+              <a routerLink="/men" class="main">{{'men' | translate}}</a>
+              <a routerLink="/women" class="main">{{'women' | translate}}</a>
+              <a routerLink="/all-frames" class="main">{{'all' | translate}}</a>
+          </nav>
+        </div>
+
+        <div class="menu-material">
+          <h1>{{'material' | translate}}</h1>
+          <nav>
+            <a routerLink="/men">{{'metal' | translate}}</a>
+            <a routerLink="/women">{{'acetat' | translate}}</a>
+            <a routerLink="/all-frames">{{'hybrid' | translate}}</a>
+          </nav>
+        </div>
+
+        <div class="menu-size">
+          <h1>{{'size' | translate}}</h1>
+          <nav>
+            <a routerLink="/men">{{'smal' | translate}}</a>
+            <a routerLink="/women">{{'medium' | translate}}</a>
+            <a routerLink="/all-frames">{{'large' | translate}}</a>
+            <a routerLink="/all-frames">{{'extra' | translate}}</a>
+          </nav>
+        </div>
+
+        <div>
+          <h1>{{'shape' | translate}}</h1>
+          <nav>
+            <a routerLink="/men">{{'round' | translate}}</a>
+            <a routerLink="/women">{{'rectangular' | translate}}</a>
+            <a routerLink="/all-frames">{{'cateye' | translate}}</a>
+          </nav>
+        </div>
+
+        <div class="menu-img">
+          <a routerLink="/custom-frames">
+          <img src="../assets/header/header-1.jpg" alt="">
+          <div class="menu-img-p">
+            <p>
+              <span>
+                Custom Fit
+              </span>
+              <br>
+              See the latest styles from our Custom files
+            </p>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <div  [ngClass]="{'menu-active':activeMenu}"
+      *ngIf="sunGlassesMenu"
+      [@fadeContent]="sunGlassesMenu?'*':'void'">
+        <div class="menu-main">
+          <nav>
+            <a routerLink="/men" class="main">{{'men' | translate}}</a>
+            <a routerLink="/women" class="main">{{'women' | translate}}</a>
+            <a routerLink="/all-frames" class="main">{{'all' | translate}}</a>
+          </nav>
+        </div>
+
+        <div class="menu-material">
+          <h1>{{'material' | translate}}</h1>
+          <nav>
+            <a routerLink="/men">{{'metal' | translate}}</a>
+            <a routerLink="/women">{{'acetat' | translate}}</a>
+            <a routerLink="/all-frames">{{'hybrid' | translate}}</a>
+          </nav>
+        </div>
+
+        <div class="menu-size">
+          <h1>{{'size' | translate}}</h1>
+          <nav>
+            <a routerLink="/men">{{'smal' | translate}}</a>
+            <a routerLink="/women">{{'medium' | translate}}</a>
+            <a routerLink="/all-frames">{{'large' | translate}}</a>
+            <a routerLink="/all-frames">{{'extra' | translate}}</a>
+          </nav>
+        </div>
+
+        <div>
+          <h1>{{'shape' | translate}}</h1>
+          <nav>
+            <a routerLink="/men">{{'round' | translate}}</a>
+            <a routerLink="/women">{{'rectangular' | translate}}</a>
+            <a routerLink="/all-frames">{{'cateye' | translate}}</a>
+          </nav>
+        </div>
+
+        <div class="menu-img">
+          <a routerLink="/custom-frames">
+          <img src="../assets/header/header-2.jpg" alt="">
+          <div class="menu-img-p">
+            <p>
+              <span>
+                Our latest sunglasses
+              </span>
+              <br>
+              Here you will find our current sunglasses
+            </p>
+          </div>
+          </a>
+        </div>
+      </div>
+
+      <div [ngClass]="{'menu-active':activeMenu}"
+       *ngIf="collectionMenu"
+       [@fadeContent]="collectionMenu?'*':'void'">
+        <div class="menu-collection" *ngFor="let item of collectionData">
+          <h1>{{'collection' | translate}}</h1>
+          <a [routerLink]="item.path">
+            <img  src="{{item.ImgUrl}}" alt="{{item.name}}">
+            <p>{{item.name| translate}}</p>
+          </a>
+        </div>
+      </div>
+  </div>
+
+  <div class="header-bottom"
+  [@fadeContent]="scrollEvent?'void':'*'">
+    <h1><span>Permium eyewear.</span>Handmade in Berlin</h1>
+    <img src="../assets/logo/LOGO.jpg" alt="" id="discover">
+  </div>
+</div>
+

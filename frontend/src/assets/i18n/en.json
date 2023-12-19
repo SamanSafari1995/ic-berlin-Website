@@ -1,0 +1,34 @@
+{
+  "glasses": "GLASSES",
+  "sunglasses" : "SUNGLASSES",
+  "collection" : "COLLECTION",
+  "journal" : "JOURNAL",
+  "about" : "ABOUT",
+  "stores" : "STORES",
+  "for opticians" : "FOR OPTICIANS",
+  "discover" : "Discover our frames",
+  "men": "Men",
+  "women" : "Women",
+  "all" : "See All",
+  "material": "Material",
+  "metal" : "Metal",
+  "acetat" : "Acetat",
+  "hybrid" : "Hybrid",
+  "size" : "Size",
+  "smal": "Smal",
+  "medium": "Medium",
+  "large" : "Large",
+  "extra" : "Extra Large",
+  "shape" : "Shape",
+  "round" : "Round",
+  "rectangular" : "Rectangular",
+  "cateye" : "Cat Eye",
+  "collectionData":
+  {
+    "Classic Collection":"Classic Collection",
+    "FLEXARBON":"FLEXARBON",
+    "Silk Collection":"Silk Collection",
+    "Mercedes-Benz Collection":"Mercedes-Benz Collection"
+  }
+
+}

@@ -1,0 +1,33 @@
+{
+  "glasses": "عینک ها",
+  "sunglasses" : "عینک های آفتابی",
+  "collection" :"مجموعه ها" ,
+  "journal" : "مجله ها",
+  "about" : "درباره ی ما",
+  "stores" : "فروشگاه ها",
+  "for opticians" : " برای چشم پزشکان",
+  "discover" : "قاب های ما را ببینید",
+  "men": "مردان",
+  "women" : "زنان",
+  "all" : "همه را ببین",
+  "material": "آلیاژ",
+  "metal" : "فلزی",
+  "acetat" : "استات",
+  "hybrid" : "ترکیبی",
+  "size" : "اندازه",
+  "smal": "کوچک",
+  "medium": "متوسط",
+  "large" : "بزرگ",
+  "extra" : "خیلی بزرگ",
+  "shape" : "شکل",
+  "round" : "گرد",
+  "rectangular" : "مستطیل",
+  "cateye" : "چشم گربه ای",
+  "collectionData":
+  {
+    "Classic Collection":"یشلیت",
+    "FLEXARBON":"شگگررو",
+    "Silk Collection":"شسثثص",
+    "Mercedes-Benz Collection":"ستش"
+  }
+}
