@@ -30,9 +30,6 @@ export class HeaderComponent implements OnInit  {
   activeMenu: boolean = false;
   viewport: boolean = false;
   lang:string = '';
-  @ViewChild('scroll') scrollbtn!: ElementRef;
-
-
 
   constructor(private router:Router,
      private translateService:TranslateService,
@@ -41,7 +38,7 @@ export class HeaderComponent implements OnInit  {
    }
 
   ngOnInit() {
-    this.lang = localStorage.getItem('lang') || 'en'
+    this.lang = localStorage.getItem('lang') || 'en';
   }
 
   changeLang(lang:any){
@@ -60,6 +57,7 @@ export class HeaderComponent implements OnInit  {
       this.scrollEvent = false;
     }
   }
+
 
   isOpen(){
     this.viewport = !this.viewport;

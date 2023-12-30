@@ -2,7 +2,7 @@
 (clickOutside)="clickOut()">
   <div class="container">
     <div class="left-section">
-      <button class="hamburger-menu" (click)="isOpen()">
+      <button class="hamburger-menu" (click)="isOpen()" >
         &#9776;
       </button>
       <div [class.menu-options]="this.viewport"
@@ -73,10 +73,10 @@
 
   <div
     [ngClass]="{'header-middle-active':activeMenu,'header-middle':!activeMenu}"
-    [ngClass]="{'header-middle-active':viewport,'header-middle':!viewport}">
+    [ngClass]="{'header-middle-active':viewport,'header-middle':!viewport}"
+    >
 
-        <div class="middle-txt"
-        [@remove]="scrollEvent?'void':'*'">
+        <div class="middle-txt" [@remove]="scrollEvent?'void':'*'">
           <h1 class="text">
             <span class="span">
               Style.
@@ -206,14 +206,14 @@
           <h1>{{'collection' | translate}}</h1>
           <a [routerLink]="item.path">
             <img  src="{{item.ImgUrl}}" alt="{{item.name}}">
-            <p>{{item.name| translate}}</p>
+            <p>{{item.name | translate}}</p>
           </a>
         </div>
       </div>
   </div>
 
   <div class="header-bottom"
-  [@fadeContent]="scrollEvent?'void':'*'">
+  [@remove]="scrollEvent?'void':'*'">
     <h1><span>Permium eyewear.</span>Handmade in Berlin</h1>
     <img src="../assets/logo/LOGO.jpg" alt="" id="discover">
   </div>

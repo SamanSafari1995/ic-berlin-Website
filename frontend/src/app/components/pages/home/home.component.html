@@ -1,0 +1,71 @@
+<div class="title">
+  <p>
+    {{'paragraph' | translate}}
+  </p>
+  <h1>
+    {{'title' | translate}}
+  </h1>
+</div>
+
+<section class="container">
+    <div class="slider-wrap">
+        <div class="item">
+            <div class="product" [@moveForward]="moveForward?'*':'void'" [@moveBackward]="moveBackward?'*':'void'"
+            *ngFor="let glass of glasses">
+                <a href="/jsdk">
+                  <img class="first-img" [src]="glass.productImg1" alt="">
+                  <img [src]="glass.productImg2" alt="">
+                  <div class="details">
+                    <p class="pro-name">
+                      {{glass.productName}}
+                    </p>
+                    <p class="pro-color">
+                      {{glass.color}}
+                    </p>
+                  </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <button class="prev" appPrev (click)="backward()">
+            <mat-icon>
+                arrow_back
+            </mat-icon>
+        </button>
+        <button class="next" appNext (click)="forward()">
+            <mat-icon>
+              arrow_forward
+            </mat-icon>
+        </button>
+    </div>
+</section>
+
+  <div class="articals">
+    <a href="/custom">
+        <div class="custom-frame">
+            <div class="image"(mouseenter)="hoverOut()" (mouseleave)="hoverIn()">
+                <img src="../assets/custom.jpg" alt="">
+                <h1 *ngIf="hover">{{'imgInfo1' | translate}}</h1>
+            </div>
+            <div>
+              <p class="conclusion">{{'imgInfo1' | translate}}</p>
+            </div>
+        </div>
+    </a>
+    <a href="/classic">
+        <div class="classic-models" (mouseenter)="hoverOut()" (mouseleave)="hoverIn()">
+            <div class="image">
+              <img src="../assets/materials.jpg" alt="">
+              <h1 *ngIf="hover">{{'imageInfo2' | translate}}</h1>
+            </div>
+            <div>
+              <p class="conclusion">{{'imageInfo2' | translate}}</p>
+            </div>
+        </div>
+      </a>
+  </div>
+
+
+

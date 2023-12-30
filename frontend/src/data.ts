@@ -4,7 +4,8 @@ import { Details } from "./app/models/productDetails";
 
 export const sampleGlasses: Glasses[] = [
   {
-    productImg: '../assets/glasses/enshi-blue.jpg',
+    productImg1: '../assets/glasses/elis-1.jpg',
+    productImg2: '../assets/glasses/elis-2.jpg',
     productName: 'Enshi',
     productNumber:100152000 ,
     material: 'Acetat',
@@ -16,7 +17,9 @@ export const sampleGlasses: Glasses[] = [
     collectionName: 'Silk Collection',
     polarized: false
   },
-  {productImg: '../assets/glasses/magnus-skyGray.jpg',
+  {
+    productImg1: '../assets/glasses/amg-1.jpg',
+    productImg2: '../assets/glasses/amg-2.jpg',
     productName: 'Magnus',
     productNumber:100162000 ,
     material: 'Metal',
@@ -29,7 +32,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/glasses/minho-goldAngel.jpg',
+    productImg1: '../assets/glasses/minho-1.jpg',
+    productImg2: '../assets/glasses/minho-2.jpg',
     productName: 'Minho',
     productNumber:100172000 ,
     material: 'metal',
@@ -42,7 +46,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: false
   },
   {
-    productImg: '../assets/glasses/nori-rosegold-angle.jpg',
+    productImg1: '../assets/glasses/nori-1.jpg',
+    productImg2: '../assets/glasses/nori-2.jpg',
     productName: 'Nori',
     productNumber:100182000 ,
     material: 'Metal',
@@ -55,7 +60,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/glasses/rio.jpg',
+    productImg1: '../assets/glasses/rio-2.jpg',
+    productImg2: '../assets/glasses/rio-1.jpg',
     productName: 'Rio',
     productNumber:100192000 ,
     material: 'Hybrid',
@@ -68,7 +74,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: false
   },
   {
-    productImg: '../assets/glasses/juna.jpg',
+    productImg1: '../assets/glasses/juna-2.jpg',
+    productImg2: '../assets/glasses/juna-1.jpg',
     productName: 'Juna',
     productNumber:100202000 ,
     material: 'Hybrid',
@@ -81,8 +88,9 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/glasses/raidon.jpg',
-    productName: 'Raidon',
+    productImg1: '../assets/glasses/radion-2.jpg',
+    productImg2: '../assets/glasses/radion-1.jpg',
+    productName: 'Radion',
     productNumber:100212000 ,
     material: 'Acetat',
     shape: 'Rectangular',
@@ -94,8 +102,9 @@ export const sampleGlasses: Glasses[] = [
     polarized: false
   },
   {
-    productImg: '../assets/glasses/evelyn.jpg',
-    productName: 'Evelyn',
+    productImg1: '../assets/glasses/sora-1.jpg',
+    productImg2: '../assets/glasses/sora-2.jpg',
+    productName: 'Sora',
     productNumber:100222000 ,
     material: 'Metal',
     shape: 'Cat Eye',
@@ -107,7 +116,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: false
   },
   {
-    productImg: '../assets/glasses/glen.jpg',
+    productImg1: '../assets/glasses/glen-2.jpg',
+    productImg2: '../assets/glasses/glen-1.jpg',
     productName: 'Glen',
     productNumber:100232000 ,
     material: 'Acetat',
@@ -120,7 +130,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/glasses/flx-01.jpg',
+    productImg1: '../assets/glasses/FLX-01.jpg',
+    productImg2: '../assets/glasses/FLX-2.jpg',
     productName: 'FLX_01',
     productNumber:100242000 ,
     material: 'Metal',
@@ -133,7 +144,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: false
   },
   {
-    productImg: '../assets/glasses/flx-02.jpg',
+    productImg1: '../assets/glasses/FLX-02.jpg',
+    productImg2: '../assets/glasses/FLX-2.jpg',
     productName: 'FLX_02',
     productNumber:100252000 ,
     material: 'Metal',
@@ -146,7 +158,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/sunglasses/flx-03.jpg',
+    productImg1: '../assets/sunglasses/flx-2.jpg',
+    productImg2: '../assets/sunglasses/flx-1.jpg',
     productName: 'FLX_S02',
     productNumber:100262000 ,
     material: 'Metal',
@@ -159,7 +172,22 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/sunglasses/FLX-S02.jpg',
+    productImg1: '../assets/sunglasses/nina-1.jpg',
+    productImg2: '../assets/sunglasses/nina-2.jpg',
+    productName: 'Nina',
+    productNumber:100262000 ,
+    material: 'Acetat',
+    shape: 'Cat Eye',
+    color: [ 'Medium Night', 'Black Nylon'] ,
+    frameSize: [ 'Medium', 'Larg','Extra Large' ] ,
+    gender: 'Women',
+    eyeWearType: 'Sunglasses',
+    collectionName: 'Classic Collection',
+    polarized: true
+  },
+  {
+    productImg1: '../assets/sunglasses/FLX-S02.jpg',
+    productImg2: '../assets/sunglasses/FLX-S01.jpg',
     productName: 'FLX_S02',
     productNumber:100272000 ,
     material: 'Metal',
@@ -172,8 +200,9 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/sunglasses/FLX-S02.jpg',
-    productName: 'FLX_S02',
+    productImg1: '../assets/sunglasses/FLX-S4-2.jpg',
+    productImg2: '../assets/sunglasses/FLX-S4-1.jpg',
+    productName: 'FLX_S4',
     productNumber:100282000 ,
     material: 'Metal',
     shape: 'Cat Eye',
@@ -185,8 +214,9 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/sunglasses/FLX-S02.jpg',
-    productName: 'FLX_S02',
+    productImg1: '../assets/sunglasses/FLX-S5-2.jpg',
+    productImg2: '../assets/sunglasses/FLX-S5-1.jpg',
+    productName: 'FLX_S5',
     productNumber:100292000 ,
     material: 'Metal',
     shape: 'Cat Eye',
@@ -198,7 +228,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/sunglasses/mib14.jpg',
+    productImg1: '../assets/sunglasses/mib14-01.jpg',
+    productImg2: '../assets/sunglasses/mib14-02.jpg',
     productName: 'MIB 14',
     productNumber:100302000 ,
     material: 'Metal',
@@ -211,7 +242,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/sunglasses/mib15.jpg',
+    productImg1: '../assets/sunglasses/mib15-01.jpg',
+    productImg2: '../assets/sunglasses/mib15-02.jpg',
     productName: 'MIB 15',
     productNumber:100312000 ,
     material: 'Metal',
@@ -224,8 +256,9 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/sunglasses/mib16.jpg',
-    productName: 'MIB 16',
+    productImg1: '../assets/sunglasses/mib-12-02.jpg',
+    productImg2: '../assets/sunglasses/mib-12-01.jpg',
+    productName: 'MIB 12',
     productNumber:100322000 ,
     material: 'Metal',
     shape: 'Cat Eye',
@@ -237,7 +270,8 @@ export const sampleGlasses: Glasses[] = [
     polarized: true
   },
   {
-    productImg: '../assets/sunglasses/mib04.jpg',
+    productImg1: '../assets/sunglasses/mib-04-02.jpg',
+    productImg2: '../assets/sunglasses/mib-04-01.jpg',
     productName: 'MIB 04',
     productNumber:100332000 ,
     material: 'Acetat',

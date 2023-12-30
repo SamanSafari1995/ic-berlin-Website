@@ -25,9 +25,13 @@
   "cateye" : "چشم گربه ای",
   "collectionData":
   {
-    "Classic Collection":"یشلیت",
-    "FLEXARBON":"شگگررو",
-    "Silk Collection":"شسثثص",
-    "Mercedes-Benz Collection":"ستش"
-  }
+    "Classic Collection":"کلاسیک",
+    "FLEXARBON":"FLEXARBON",
+    "Silk Collection":"ابریشم",
+    "Mercedes-Benz Collection":"مرسدس"
+  },
+  "paragraph" : "برای ذهن های کنجکاو از سال 1996",
+  "title": "آخرین نسخه های منتشر شده از آیس برلین",
+  "imgInfo1": "جالب ترین فریم های سفارشی در آیس برلین",
+  "imageInfo2": "مجموعه کلاسیک برای افراد شیک"
 }

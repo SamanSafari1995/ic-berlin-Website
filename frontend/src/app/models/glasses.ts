@@ -1,5 +1,6 @@
 export class Glasses{
-  productImg!: string
+  productImg1!: string
+  productImg2!:string
   productName!: string
   productNumber!: number
   material!: string

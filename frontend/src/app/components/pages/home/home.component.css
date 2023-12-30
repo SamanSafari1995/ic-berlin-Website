@@ -1,0 +1,198 @@
+.title{
+  display: flex;
+  flex-direction: column;
+  margin-top: 45rem ;
+  text-align: center;
+}
+
+.title h1{
+  font-weight: 500;
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.container{
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+  position: relative;
+}
+
+.slider-wrap{
+  display: flex;
+  align-items: center;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 40rem;
+}
+
+.product{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-right: 1.5rem;
+}
+
+.product a{
+  text-decoration: none;
+  text-align: start;
+  color: black;
+}
+
+.product a:hover{
+  cursor: pointer;
+  color: orangered;
+}
+
+.product img{
+  width: 28rem;
+  object-fit: contain;
+  height: 30rem;
+  margin: 0;
+}
+
+.pro-name{
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.pro-color{
+  font-size: .9rem;
+}
+
+.first-img{
+  position: absolute;
+  top: 0px;
+  opacity: 0;
+  transition: .5s;
+}
+
+.first-img:hover{
+  opacity: 1;
+  transition: .5s;
+}
+
+.prev{
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 2px;
+  color: white;
+  background-color: black;
+}
+.next{
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 2px;
+  color: white;
+  background-color: black;
+}
+.prev:hover{
+  cursor: pointer;
+  opacity: .7;
+}
+
+.next:hover{
+  cursor: pointer;
+  opacity: .7;
+}
+
+.articals{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20rem;
+}
+
+.articals a{
+  text-decoration: none;
+  color: black;
+}
+
+.custom-frame{
+  margin-bottom: 10rem;
+  transition: .3s;
+}
+.custom-frame:hover{
+  color: orangered;
+  transition: .3s;
+}
+
+.classic-models{
+  margin-bottom: 10rem;
+  transition: .3s;
+}
+
+.classic-models:hover{
+  color: orangered;
+  transition: .3s;
+}
+
+.image{
+  position: relative;
+  overflow: hidden;
+}
+
+.image img{
+  height: 50rem;
+  width: 50rem;
+  object-fit: cover;
+  z-index: 2;
+}
+.image img:hover{
+  filter: brightness(.4);
+  cursor: pointer;
+}
+
+.image h1{
+  position: absolute;
+  color: inherit;
+  z-index: 0;
+  top: 30%;
+  left: -30%;
+  right: -50%;
+  font-weight: 700;
+  font-size: 5rem;
+  line-height: 6rem;
+  letter-spacing: 1rem;
+  -webkit-text-stroke: 0.1rem orangered;
+  -webkit-text-fill-color: transparent;
+  animation: text 15s cubic-bezier(0.02, 0.03, 1, 1.01) infinite;
+}
+
+@keyframes text {
+0%{
+  transform: translateX(100%);
+}
+35%{
+  transform: translateX(0%);
+}
+75%{
+  transform: translateX(-50%);
+}
+100%{
+  transform: translateX(-100%);
+}
+
+}
+
+.conclusion{
+  font-size: 1.8rem;
+  margin-top: 1rem;
+}

@@ -10,6 +10,9 @@ import { ClickOutsideDirective } from './components/partials/directive/clickOuts
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HomeComponent } from './components/pages/home/home.component';
+import { NextDirective } from './components/pages/directives/next.directive';
+import { PrevDirective } from './components/pages/directives/prev.directive';
 
 
 export function HttpLoaderFactory(http:HttpClient){
@@ -20,7 +23,10 @@ export function HttpLoaderFactory(http:HttpClient){
     declarations: [
         AppComponent,
         HeaderComponent,
-        ClickOutsideDirective
+        ClickOutsideDirective,
+        HomeComponent,
+        NextDirective,
+        PrevDirective
     ],
     providers: [HttpClient],
     bootstrap: [AppComponent],
