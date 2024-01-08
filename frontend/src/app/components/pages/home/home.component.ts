@@ -33,11 +33,9 @@ export class HomeComponent implements OnInit {
   }
   hoverIn(){
     this.hover = false;
-    console.log(this.hover)
   }
   hoverOut(){
     this.hover = true;
-    console.log(this.hover)
   }
 
 }

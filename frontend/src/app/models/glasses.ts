@@ -6,7 +6,7 @@ export class Glasses{
   material!: string
   shape!: string
   color!: string[]
-  frameSize!: string[]
+  frameSize!: string
   gender!:string
   eyeWearType!: string
   collectionName!: string

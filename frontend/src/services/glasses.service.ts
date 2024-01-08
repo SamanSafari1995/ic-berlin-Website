@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Glasses } from 'src/app/models/glasses';
 import { sampleGlasses } from 'src/data';
 
 @Injectable({
@@ -8,35 +9,62 @@ export class GlassesService {
 
   constructor() { }
 
-  getAll(){
+
+  getAll():Glasses[]{
     return sampleGlasses;
   }
 
-  getAllGlassesBySearch(search:string){
+  getByType(type:string){
+    return this.getAll().filter(product=>{
+      return product.eyeWearType.toLowerCase() === type.toLowerCase()
+    })
+  }
+
+  getGlassesBySearch(search:string):Glasses[]{
     return this.getAll()
     .filter(
       glass =>glass.productName.toLowerCase()
       .includes(search.toLowerCase()))
   }
 
-  getGlassesByGender(gender:string){
-    return this.getAll()
-    .filter(
-      glass =>glass.gender.toLowerCase()
-      .includes(gender.toLowerCase()))
-  }
-
-  getGlassesByMaterial(material:string){
-    return this.getAll()
+  getGlassesByMaterial(type:string, material:string):Glasses[]{
+    return this.getByType(type)
     .filter(
       glass =>glass.material.toLowerCase()
       .includes(material.toLowerCase()))
   }
 
-  getGlassesByType(type:string){
-    return this.getAll()
+
+  getGlassesByGender(type:string, gender:string):Glasses[]{
+    return this.getByType(type)
     .filter(
-      glass =>glass.eyeWearType.toLowerCase()
-      .includes(type.toLowerCase()))
+      glass =>
+        glass.gender.toLowerCase()
+        .includes(gender.toLowerCase())
+    )
   }
+
+  getGlassesBySize(type:string, size:string):Glasses[]{
+    return this.getByType(type)
+    .filter(product =>
+      product.frameSize.toLowerCase()
+      .includes(size.toLowerCase()))
+  }
+
+
+  getGlassesByShape(type:string, shape:string):Glasses[]{
+    return this.getByType(type)
+    .filter(
+      glass =>glass.shape.toLowerCase().replace(/ +/g, "")
+      .includes(shape.toLowerCase()))
+  }
+
+  getByCollectionName(coName:string):Glasses[]{
+    return this.getAll().filter(
+      glass =>glass.collectionName.toLowerCase().replace(/ +g/,"")
+      .includes(coName.toLowerCase())
+    )
+  }
+
+
 }

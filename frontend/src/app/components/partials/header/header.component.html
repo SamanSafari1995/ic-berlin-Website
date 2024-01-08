@@ -94,37 +94,37 @@
        [@fadeContent]="glasessMenu?'*':'void'">
         <div class="menu-main">
           <nav>
-              <a routerLink="/men" class="main">{{'men' | translate}}</a>
-              <a routerLink="/women" class="main">{{'women' | translate}}</a>
-              <a routerLink="/all-frames" class="main">{{'all' | translate}}</a>
+              <a routerLink="/glasses/men" class="main">{{'men' | translate}}</a>
+              <a routerLink="/glasses/women" class="main">{{'women' | translate}}</a>
+              <a routerLink="/glasses" class="main">{{'all' | translate}}</a>
           </nav>
         </div>
 
         <div class="menu-material">
           <h1>{{'material' | translate}}</h1>
           <nav>
-            <a routerLink="/men">{{'metal' | translate}}</a>
-            <a routerLink="/women">{{'acetat' | translate}}</a>
-            <a routerLink="/all-frames">{{'hybrid' | translate}}</a>
+            <a routerLink="/glasses/metal">{{'metal' | translate}}</a>
+            <a routerLink="/glasses/acetat">{{'acetat' | translate}}</a>
+            <a routerLink="/glasses/hybrid">{{'hybrid' | translate}}</a>
           </nav>
         </div>
 
         <div class="menu-size">
           <h1>{{'size' | translate}}</h1>
           <nav>
-            <a routerLink="/men">{{'smal' | translate}}</a>
-            <a routerLink="/women">{{'medium' | translate}}</a>
-            <a routerLink="/all-frames">{{'large' | translate}}</a>
-            <a routerLink="/all-frames">{{'extra' | translate}}</a>
+            <a routerLink="/glasses/small">{{'small' | translate}}</a>
+            <a routerLink="/glasses/medium">{{'medium' | translate}}</a>
+            <a routerLink="/glasses/large">{{'large' | translate}}</a>
+            <a routerLink="/glasses/extra">{{'extra' | translate}}</a>
           </nav>
         </div>
 
         <div>
           <h1>{{'shape' | translate}}</h1>
           <nav>
-            <a routerLink="/men">{{'round' | translate}}</a>
-            <a routerLink="/women">{{'rectangular' | translate}}</a>
-            <a routerLink="/all-frames">{{'cateye' | translate}}</a>
+            <a routerLink="/glasses/round">{{'round' | translate}}</a>
+            <a routerLink="/glasses/rectangular">{{'rectangular' | translate}}</a>
+            <a routerLink="/glasses/cateye">{{'cateye' | translate}}</a>
           </nav>
         </div>
 
@@ -149,37 +149,37 @@
       [@fadeContent]="sunGlassesMenu?'*':'void'">
         <div class="menu-main">
           <nav>
-            <a routerLink="/men" class="main">{{'men' | translate}}</a>
-            <a routerLink="/women" class="main">{{'women' | translate}}</a>
-            <a routerLink="/all-frames" class="main">{{'all' | translate}}</a>
+            <a routerLink="/sunglasses/men" class="main">{{'men' | translate}}</a>
+            <a routerLink="/sunglasses/women" class="main">{{'women' | translate}}</a>
+            <a routerLink="/sunglasses" class="main">{{'all' | translate}}</a>
           </nav>
         </div>
 
         <div class="menu-material">
           <h1>{{'material' | translate}}</h1>
           <nav>
-            <a routerLink="/men">{{'metal' | translate}}</a>
-            <a routerLink="/women">{{'acetat' | translate}}</a>
-            <a routerLink="/all-frames">{{'hybrid' | translate}}</a>
+            <a routerLink="sunglasses/metal">{{'metal' | translate}}</a>
+            <a routerLink="sunglasses/acetat">{{'acetat' | translate}}</a>
+            <a routerLink="sunglasses/hybrid">{{'hybrid' | translate}}</a>
           </nav>
         </div>
 
         <div class="menu-size">
           <h1>{{'size' | translate}}</h1>
           <nav>
-            <a routerLink="/men">{{'smal' | translate}}</a>
-            <a routerLink="/women">{{'medium' | translate}}</a>
-            <a routerLink="/all-frames">{{'large' | translate}}</a>
-            <a routerLink="/all-frames">{{'extra' | translate}}</a>
+            <a routerLink="sunglasses/small">{{'small' | translate}}</a>
+            <a routerLink="sunglasses/medium">{{'medium' | translate}}</a>
+            <a routerLink="sunglasses/large">{{'large' | translate}}</a>
+            <a routerLink="sunglasses/extra">{{'extra' | translate}}</a>
           </nav>
         </div>
 
         <div>
           <h1>{{'shape' | translate}}</h1>
           <nav>
-            <a routerLink="/men">{{'round' | translate}}</a>
-            <a routerLink="/women">{{'rectangular' | translate}}</a>
-            <a routerLink="/all-frames">{{'cateye' | translate}}</a>
+            <a routerLink="sunglasses/round">{{'round' | translate}}</a>
+            <a routerLink="sunglasses/rectangular">{{'rectangular' | translate}}</a>
+            <a routerLink="sunglasses/cateye">{{'cateye' | translate}}</a>
           </nav>
         </div>
 
@@ -206,7 +206,7 @@
           <h1>{{'collection' | translate}}</h1>
           <a [routerLink]="item.path">
             <img  src="{{item.ImgUrl}}" alt="{{item.name}}">
-            <p>{{item.name | translate}}</p>
+            <p>{{"collectionData."+item.name| translate}}</p>
           </a>
         </div>
       </div>

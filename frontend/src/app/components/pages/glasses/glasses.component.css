@@ -1,0 +1,226 @@
+
+.title-co{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+}
+
+.logo{
+  font-size: 2rem;
+  font-weight: 900;
+  background-color: white;
+  border: 1px solid lightgray;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 85%;
+  display: block;
+  margin-bottom: 2rem;
+  height: 3rem;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.title{
+  font-size: 8rem;
+  text-align: center;
+  margin: 8rem 3rem;
+  font-weight: 500;
+}
+
+.filter-btn{
+  width: 8rem;
+  height: 4rem;
+  border: 1px solid rgb(219, 219, 219);
+  background-color: white;
+  margin-bottom: 5rem;
+  transition: .7s;
+  cursor: pointer;
+  font-size: larger;
+}
+.filter-btn:hover{
+  background-color: orangered;
+  transition: .7s;
+  border-radius: .4rem;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1rem;
+  row-gap: 8rem;
+  overflow: hidden;
+}
+
+.container a{
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+.container a:hover{
+  color: orangered;
+}
+
+.image{
+  position: relative;
+}
+
+.details, .collection-name{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.c-name {
+  background-color: black;
+  padding-top: 12px;
+  color: white;
+  height: 2.5rem;
+  width: 10rem;
+  border-radius: 3rem;
+  position: absolute;
+  top: 2.5rem;
+  left: 2rem;
+}
+
+.name{
+  font-size: 3rem;
+  font-weight: 300;
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.firstImg{
+  width: 25rem;
+  height: 32rem;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: .5s;
+}
+.secondImg{
+  width: 25rem;
+  height: 32rem;
+  object-fit: contain;
+  padding: 0;
+}
+
+.firstImg:hover{
+  opacity: 1;
+  transition: .5s;
+}
+
+.sidenave-content{
+  width: 40vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: scroll;
+}
+
+.sidenav-title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 3rem;
+  width: 50%;
+}
+
+.sidenav-title h1{
+  font-size: 3.4rem;
+}
+
+.sidenav-title button{
+  margin-left: 3rem;
+  transition: .5s;
+}
+
+.sidenav-title button:hover{
+  transform: scale(1.3);
+  transition: .5s;
+  cursor: pointer;
+}
+
+.filter{
+  display: flex;
+  flex-direction: column;
+}
+
+.filter h2{
+  font-size: 1.3rem;
+  margin-left: 1rem;
+}
+
+.filter span{
+  display: inline-block;
+  margin-bottom: 2.4rem;
+}
+
+
+.filter input{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 6rem;
+  margin-left: 1rem;
+  text-align: center;
+  border: .5px solid rgb(219, 219, 219);
+}
+
+.filter input:hover{
+  cursor: pointer;
+  background-color: lightgray;
+  border-radius: 2px;
+}
+
+.filter h2{
+  display: block;
+
+}
+
+@media(max-width:1050px){
+  .container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 8rem;
+    overflow: hidden;
+  }
+}
+
+@media(max-width:500px){
+  .container{
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 1rem;
+    row-gap: 8rem;
+    overflow: hidden;
+  }
+
+  .firstImg{
+    width: 15rem;
+    height: 20rem;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: .5s;
+  }
+  .secondImg{
+    width: 15rem;
+    height: 20rem;
+    object-fit: contain;
+  }
+
+  .image{
+    width: 15rem;
+  }
+
+}

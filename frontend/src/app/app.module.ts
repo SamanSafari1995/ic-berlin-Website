@@ -13,6 +13,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HomeComponent } from './components/pages/home/home.component';
 import { NextDirective } from './components/pages/directives/next.directive';
 import { PrevDirective } from './components/pages/directives/prev.directive';
+import { GlassesComponent } from './components/pages/glasses/glasses.component';
 
 
 export function HttpLoaderFactory(http:HttpClient){
@@ -26,7 +27,8 @@ export function HttpLoaderFactory(http:HttpClient){
         ClickOutsideDirective,
         HomeComponent,
         NextDirective,
-        PrevDirective
+        PrevDirective,
+        GlassesComponent
     ],
     providers: [HttpClient],
     bootstrap: [AppComponent],
