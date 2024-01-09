@@ -78,6 +78,3 @@ export const moveBackward = trigger('moveBackward', [
     animate('500ms ease-out'),
   ]),
 ])
-
-
-

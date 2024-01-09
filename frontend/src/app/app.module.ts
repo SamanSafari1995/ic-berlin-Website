@@ -14,6 +14,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { NextDirective } from './components/pages/directives/next.directive';
 import { PrevDirective } from './components/pages/directives/prev.directive';
 import { GlassesComponent } from './components/pages/glasses/glasses.component';
+import { CollectionComponent } from './components/pages/collection/collection.component';
 
 
 export function HttpLoaderFactory(http:HttpClient){
@@ -28,7 +29,8 @@ export function HttpLoaderFactory(http:HttpClient){
         HomeComponent,
         NextDirective,
         PrevDirective,
-        GlassesComponent
+        GlassesComponent,
+        CollectionComponent
     ],
     providers: [HttpClient],
     bootstrap: [AppComponent],

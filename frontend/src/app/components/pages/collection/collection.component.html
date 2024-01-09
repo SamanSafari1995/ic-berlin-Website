@@ -1,0 +1,19 @@
+<div class="container" [ngStyle]="{ backgroundImage: 'url('+image+')'}">
+      <app-header></app-header>
+      <h1 class="collection-title" *ngFor="let item of collection">
+          {{"collectionData."+item.collectionName| translate}}
+      </h1>
+</div>
+<div class="container" >
+  <a href="" *ngFor="let item of collection">
+    <div class="image">
+      <img class="firstImg" [src]="item.productImg1" alt="">
+      <img class="secondImg" [src]="item.productImg2" alt="">
+      <div class="details">
+        <p class="c-name">{{item.collectionName}}</p>
+        <p class="name">{{item.productName}}</p>
+        <p class="color">{{item.color}}</p>
+      </div>
+    </div>
+  </a>
+</div>

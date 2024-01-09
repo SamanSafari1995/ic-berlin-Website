@@ -38,7 +38,6 @@ export class GlassesComponent implements OnInit{
 
 
   ngOnInit(): void {
-    console.log(this.activatedRoute)
     this.activatedRoute.params.subscribe(params =>{
       if(params.filter === 'men' || params.filter === 'women'){
         this.glasses = this.glassesService.getGlassesByGender(params.glassesType,params.filter)
