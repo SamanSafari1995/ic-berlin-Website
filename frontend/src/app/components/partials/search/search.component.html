@@ -1,0 +1,46 @@
+<div class="navbar">
+    <a routerLink="/" class="homePage">Go back To Homepage</a>
+</div>
+<div class="container">
+  <mat-form-field
+    MatFormFieldControl
+    class="mat-form"
+    appearance="outline"
+    color="warn"
+  >
+    <input
+      type="text"
+      placeholder="Search By Name In ic! berlin"
+      #s
+      [value]="searchTerm"
+      (keyup.enter)="search(s.value)"
+      [matAutocomplete]="auto"
+      [formControl]="formControl"
+      matInput
+    />
+    <button class="search-button" (click)="search(s.value)">
+      <mat-icon> search </mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-autocomplete #auto>
+    <mat-option
+      *ngFor="let item of filterObj | async"
+      [value]="item.productName"
+      >{{ item.productName }} | {{ item.material }}
+    </mat-option>
+  </mat-autocomplete>
+</div>
+
+<div class="pro-details" *ngFor="let item of glass">
+  <a routerLink="/">
+    <div class="image">
+      <img class="firstImg" [src]="item.productImg1" alt="" />
+      <img class="secondImg" [src]="item.productImg2" alt="" />
+      <div class="details">
+        <p class="name">{{ item.productName }}</p>
+        <p class="color">{{ "Type: " + item.eyeWearType }}</p>
+        <p class="color">{{ "Gender: " + item.gender }}</p>
+      </div>
+    </div>
+  </a>
+</div>

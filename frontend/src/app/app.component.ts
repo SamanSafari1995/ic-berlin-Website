@@ -20,7 +20,7 @@ export class AppComponent {
 
     router.events.subscribe((val)=>{
       if(val instanceof NavigationEnd){
-        if(val.url !== '/'){
+        if(val.url !== '/' && val.url!=='/#discover'){
           this.showHeader = false;
         }
         else{

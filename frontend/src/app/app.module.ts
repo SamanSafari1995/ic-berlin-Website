@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { MaterialsModule } from './modules/materials/materials.module';
 import { ClickOutsideDirective } from './components/partials/directive/clickOutside';
@@ -15,6 +16,7 @@ import { NextDirective } from './components/pages/directives/next.directive';
 import { PrevDirective } from './components/pages/directives/prev.directive';
 import { GlassesComponent } from './components/pages/glasses/glasses.component';
 import { CollectionComponent } from './components/pages/collection/collection.component';
+import { SearchComponent } from './components/partials/search/search.component';
 
 
 export function HttpLoaderFactory(http:HttpClient){
@@ -30,7 +32,8 @@ export function HttpLoaderFactory(http:HttpClient){
         NextDirective,
         PrevDirective,
         GlassesComponent,
-        CollectionComponent
+        CollectionComponent,
+        SearchComponent
     ],
     providers: [HttpClient],
     bootstrap: [AppComponent],
@@ -38,6 +41,7 @@ export function HttpLoaderFactory(http:HttpClient){
         BrowserModule,
         AppRoutingModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
         MaterialsModule,
         HttpClientModule,
         TranslateModule.forRoot({

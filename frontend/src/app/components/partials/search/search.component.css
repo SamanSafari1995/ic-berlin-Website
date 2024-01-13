@@ -1,0 +1,104 @@
+.navbar{
+  margin: 3rem;
+}
+
+.homePage{
+  text-decoration: none;
+  font-size: 2rem;
+  color: black;
+  transition: .5s;
+}
+
+.homePage:hover{
+ opacity: .6;
+ transition: .5s;
+}
+
+.mat-form{
+  position: relative;
+  width: 80%;
+  margin-left: 10rem;
+  margin-top: 10rem;
+}
+
+.search-button{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  border: none;
+  background-color: inherit;
+  transition: .5s;
+}
+
+.search-button:hover{
+  transform: scale(1.5);
+  transition: .5s;
+  cursor: pointer;
+}
+
+.pro-details{
+  position: relative;
+  margin-left: 30rem;
+  width: 28rem;
+}
+
+
+.pro-details a{
+  text-decoration: none;
+  color: black;
+}
+
+
+.pro-details a:hover{
+  color: orangered;
+}
+
+.name{
+  font-size: 3rem;
+  font-weight: 300;
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.firstImg{
+  width: 25rem;
+  height: 32rem;
+  object-fit: contain;
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition: .5s;
+}
+.secondImg{
+  width: 25rem;
+  height: 32rem;
+  object-fit: contain;
+  padding: 0;
+}
+
+.firstImg:hover{
+  opacity: 1;
+  transition: .5s;
+}
+
+@media(max-width: 800px){
+
+  .mat-form{
+    position: relative;
+    width: 40%;
+    /* margin-left: 10rem; */
+    margin-top: 10rem;
+  }
+
+  .homePage{
+    font-size: 1rem;
+    text-wrap: nowrap;
+  }
+
+  .pro-details{
+    position: relative;
+    width: 28rem;
+    margin-left: 8rem;
+  }
+}

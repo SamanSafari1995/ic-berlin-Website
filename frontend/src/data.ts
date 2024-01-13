@@ -457,7 +457,7 @@ export const sampleCollection:Collection[] = [
     path: '/collection/silk'
   },
   {
-    name:'Mercedes-Benz Collection',
+    name:'Mercedes-Bens Collection',
     ImgUrl: '../assets/collections/mercedes-benz-collection.jpg',
     path: '/collection/mercedes'
   }

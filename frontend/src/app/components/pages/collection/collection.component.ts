@@ -20,16 +20,16 @@ export class CollectionComponent implements OnInit {
     activatedRoute.params.subscribe(product=>{
       this.collectionName = product.name
       if(this.collectionName ==='silk'){
-        this.image = '../../../../assets/collections/silk-collection.jpg'
+        this.image = '../assets/collections/silk-collection.jpg'
       }
       else if(this.collectionName === 'classic'){
-        this.image = '../../../../assets/collections/classic-collection.jpg'
+        this.image = '../assets/collections/classic-collection.jpg'
       }
       else if(this.collectionName === 'flex'){
-        this.image = '../../../../assets/collections/flxarbon-collection.jpg'
+        this.image = '../assets/collections/flxarbon-collection.jpg'
       }
       else{
-        this.image = '../../../../assets/collections/mercedes-benz-collection.jpg'
+        this.image = '../assets/collections/mercedes-benz-collection.jpg'
       }
     })
   }
@@ -41,9 +41,6 @@ export class CollectionComponent implements OnInit {
     })
   }
 
-  myFunc(){
-    this.collection = this.glassesService.getByCollectionName('silk')
-  }
 
   @HostListener("document:scroll")
   collapse(){

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Glasses } from 'src/app/models/glasses';
 import { sampleGlasses } from 'src/data';
+import { GetProduct } from 'src/app/interfaces/Iproduct';
+
 
 @Injectable({
   providedIn: 'root'
@@ -64,6 +66,13 @@ export class GlassesService {
       glass =>glass.collectionName.toLowerCase().replace(/ +g/,"")
       .includes(coName.toLowerCase())
     )
+  }
+
+  getNewObjOfProduct():GetProduct{
+    const obj = this.getAll().map(({productName, material})=> {
+      return {productName, material}
+    });
+    return obj
   }
 
 

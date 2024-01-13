@@ -1,221 +1,233 @@
-<div class="header" [@collapsible]="scrollEvent?'*':'void'"
-(clickOutside)="clickOut()">
+<div
+  class="header"
+  [@collapsible]="scrollEvent ? '*' : 'void'"
+  (clickOutside)="clickOut()"
+>
   <div class="container">
     <div class="left-section">
-      <button class="hamburger-menu" (click)="isOpen()" >
-        &#9776;
-      </button>
-      <div [class.menu-options]="this.viewport"
-       [class.menu-left]="!this.viewport">
+      <button class="hamburger-menu" (click)="isOpen()">&#9776;</button>
+      <div
+        [class.menu-options]="this.viewport"
+        [class.menu-left]="!this.viewport"
+      >
         <button (click)="openGlasessMenuDeatails()">
-          {{'glasses' | translate}}
+          {{ "glasses" | translate }}
         </button>
         <button (click)="openSunGlasessMenuDeatails()">
-          {{'sunglasses' | translate}}
+          {{ "sunglasses" | translate }}
         </button>
-        <button (click)="opencollectionMenuDeatails()" >
-          {{'collection' | translate}}
+        <button (click)="opencollectionMenuDeatails()">
+          {{ "collection" | translate }}
         </button>
         <a routerLink="/jurnals">
-            <button>
-              {{'journal' | translate}}
-            </button>
+          <button>
+            {{ "journal" | translate }}
+          </button>
         </a>
         <a routerLink="/about">
-            <button>
-              {{'about' | translate}}
-            </button>
+          <button>
+            {{ "about" | translate }}
+          </button>
         </a>
-        <select class="selector" title="Language" *ngIf="viewport"
-        (change)="changeLang($event)">
+        <select
+          class="selector"
+          title="Language"
+          *ngIf="viewport"
+          (change)="changeLang($event)"
+        >
           <option value="en">English</option>
           <option value="pe">Persian</option>
         </select>
       </div>
-
     </div>
 
-      <div class="middle-section">
-        <a routerLink="/">
-          <h1>ic! berlin</h1>
-        </a>
-      </div>
+    <div class="middle-section">
+      <a routerLink="/">
+        <h1>ic! berlin</h1>
+      </a>
+    </div>
 
     <div class="right">
-      <select class="select-lang" title="Language"
-       (change)="changeLang($event)">
-        <option [selected]="lang ==='en'" value="en">
-          English
-        </option>
-        <option [selected]="lang ==='pe'" value="pe"
-        >فارسی
-        </option>
+      <select
+        class="select-lang"
+        title="Language"
+        (change)="changeLang($event)"
+      >
+        <option [selected]="lang === 'en'" value="en">English</option>
+        <option [selected]="lang === 'pe'" value="pe">فارسی</option>
       </select>
       <a routerLink="/stores">
         <button>
-          {{'stores' | translate}}
+          {{ "stores" | translate }}
         </button>
       </a>
       <a routerLink="/for-opticians">
         <button>
-          {{'for opticians' | translate}}
+          {{ "for opticians" | translate }}
         </button>
       </a>
       <a routerLink="/search" class="search">
         <button class="search">
-          <mat-icon>
-            search
-          </mat-icon>
+          <mat-icon> search </mat-icon>
         </button>
       </a>
     </div>
   </div>
 
   <div
-    [ngClass]="{'header-middle-active':activeMenu,'header-middle':!activeMenu}"
-    [ngClass]="{'header-middle-active':viewport,'header-middle':!viewport}"
+    [ngClass]="{
+      'header-middle-active': activeMenu,
+      'header-middle': !activeMenu
+    }"
+    [ngClass]="{ 'header-middle-active': viewport, 'header-middle': !viewport }"
+  >
+    <div class="middle-txt" [@remove]="scrollEvent ? 'void' : '*'">
+      <h1 class="text">
+        <span class="span"> Style. </span>
+        Made in Germany
+      </h1>
+      <button class="middle-btn" (click)="goToHomePage('#discover')">
+        {{ "discover" | translate }} &rarr;
+      </button>
+    </div>
+
+    <div
+      [ngClass]="{ 'menu-active': activeMenu }"
+      *ngIf="glasessMenu"
+      [@fadeContent]="glasessMenu ? '*' : 'void'"
     >
+      <div class="menu-main">
+        <nav>
+          <a routerLink="/glasses/men" class="main">{{ "men" | translate }}</a>
+          <a routerLink="/glasses/women" class="main">{{
+            "women" | translate
+          }}</a>
+          <a routerLink="/glasses" class="main">{{ "all" | translate }}</a>
+        </nav>
+      </div>
 
-        <div class="middle-txt" [@remove]="scrollEvent?'void':'*'">
-          <h1 class="text">
-            <span class="span">
-              Style.
-            </span>
-            Made in Germany
-          </h1>
-          <button class="middle-btn"
-          (click)="goToHomePage('#discover')" >
-            {{'discover' | translate}} &rarr;
-          </button>
-        </div>
+      <div class="menu-material">
+        <h1>{{ "material" | translate }}</h1>
+        <nav>
+          <a routerLink="/glasses/metal">{{ "metal" | translate }}</a>
+          <a routerLink="/glasses/acetat">{{ "acetat" | translate }}</a>
+          <a routerLink="/glasses/hybrid">{{ "hybrid" | translate }}</a>
+        </nav>
+      </div>
 
-      <div [ngClass]="{'menu-active':activeMenu}"
-       *ngIf="glasessMenu"
-       [@fadeContent]="glasessMenu?'*':'void'">
-        <div class="menu-main">
-          <nav>
-              <a routerLink="/glasses/men" class="main">{{'men' | translate}}</a>
-              <a routerLink="/glasses/women" class="main">{{'women' | translate}}</a>
-              <a routerLink="/glasses" class="main">{{'all' | translate}}</a>
-          </nav>
-        </div>
+      <div class="menu-size">
+        <h1>{{ "size" | translate }}</h1>
+        <nav>
+          <a routerLink="/glasses/small">{{ "small" | translate }}</a>
+          <a routerLink="/glasses/medium">{{ "medium" | translate }}</a>
+          <a routerLink="/glasses/large">{{ "large" | translate }}</a>
+          <a routerLink="/glasses/extra">{{ "extra" | translate }}</a>
+        </nav>
+      </div>
 
-        <div class="menu-material">
-          <h1>{{'material' | translate}}</h1>
-          <nav>
-            <a routerLink="/glasses/metal">{{'metal' | translate}}</a>
-            <a routerLink="/glasses/acetat">{{'acetat' | translate}}</a>
-            <a routerLink="/glasses/hybrid">{{'hybrid' | translate}}</a>
-          </nav>
-        </div>
+      <div>
+        <h1>{{ "shape" | translate }}</h1>
+        <nav>
+          <a routerLink="/glasses/round">{{ "round" | translate }}</a>
+          <a routerLink="/glasses/rectangular">{{
+            "rectangular" | translate
+          }}</a>
+          <a routerLink="/glasses/cateye">{{ "cateye" | translate }}</a>
+        </nav>
+      </div>
 
-        <div class="menu-size">
-          <h1>{{'size' | translate}}</h1>
-          <nav>
-            <a routerLink="/glasses/small">{{'small' | translate}}</a>
-            <a routerLink="/glasses/medium">{{'medium' | translate}}</a>
-            <a routerLink="/glasses/large">{{'large' | translate}}</a>
-            <a routerLink="/glasses/extra">{{'extra' | translate}}</a>
-          </nav>
-        </div>
-
-        <div>
-          <h1>{{'shape' | translate}}</h1>
-          <nav>
-            <a routerLink="/glasses/round">{{'round' | translate}}</a>
-            <a routerLink="/glasses/rectangular">{{'rectangular' | translate}}</a>
-            <a routerLink="/glasses/cateye">{{'cateye' | translate}}</a>
-          </nav>
-        </div>
-
-        <div class="menu-img">
-          <a routerLink="/custom-frames">
-          <img src="../assets/header/header-1.jpg" alt="">
+      <div class="menu-img">
+        <a routerLink="/custom-frames">
+          <img src="../assets/header/header-1.jpg" alt="" />
           <div class="menu-img-p">
             <p>
-              <span>
-                Custom Fit
-              </span>
-              <br>
+              <span> Custom Fit </span>
+              <br />
               See the latest styles from our Custom files
             </p>
           </div>
-          </a>
-        </div>
+        </a>
+      </div>
+    </div>
+
+    <div
+      [ngClass]="{ 'menu-active': activeMenu }"
+      *ngIf="sunGlassesMenu"
+      [@fadeContent]="sunGlassesMenu ? '*' : 'void'"
+    >
+      <div class="menu-main">
+        <nav>
+          <a routerLink="/sunglasses/men" class="main">{{
+            "men" | translate
+          }}</a>
+          <a routerLink="/sunglasses/women" class="main">{{
+            "women" | translate
+          }}</a>
+          <a routerLink="/sunglasses" class="main">{{ "all" | translate }}</a>
+        </nav>
       </div>
 
-      <div  [ngClass]="{'menu-active':activeMenu}"
-      *ngIf="sunGlassesMenu"
-      [@fadeContent]="sunGlassesMenu?'*':'void'">
-        <div class="menu-main">
-          <nav>
-            <a routerLink="/sunglasses/men" class="main">{{'men' | translate}}</a>
-            <a routerLink="/sunglasses/women" class="main">{{'women' | translate}}</a>
-            <a routerLink="/sunglasses" class="main">{{'all' | translate}}</a>
-          </nav>
-        </div>
+      <div class="menu-material">
+        <h1>{{ "material" | translate }}</h1>
+        <nav>
+          <a routerLink="sunglasses/metal">{{ "metal" | translate }}</a>
+          <a routerLink="sunglasses/acetat">{{ "acetat" | translate }}</a>
+          <a routerLink="sunglasses/hybrid">{{ "hybrid" | translate }}</a>
+        </nav>
+      </div>
 
-        <div class="menu-material">
-          <h1>{{'material' | translate}}</h1>
-          <nav>
-            <a routerLink="sunglasses/metal">{{'metal' | translate}}</a>
-            <a routerLink="sunglasses/acetat">{{'acetat' | translate}}</a>
-            <a routerLink="sunglasses/hybrid">{{'hybrid' | translate}}</a>
-          </nav>
-        </div>
+      <div class="menu-size">
+        <h1>{{ "size" | translate }}</h1>
+        <nav>
+          <a routerLink="sunglasses/small">{{ "small" | translate }}</a>
+          <a routerLink="sunglasses/medium">{{ "medium" | translate }}</a>
+          <a routerLink="sunglasses/large">{{ "large" | translate }}</a>
+          <a routerLink="sunglasses/extra">{{ "extra" | translate }}</a>
+        </nav>
+      </div>
 
-        <div class="menu-size">
-          <h1>{{'size' | translate}}</h1>
-          <nav>
-            <a routerLink="sunglasses/small">{{'small' | translate}}</a>
-            <a routerLink="sunglasses/medium">{{'medium' | translate}}</a>
-            <a routerLink="sunglasses/large">{{'large' | translate}}</a>
-            <a routerLink="sunglasses/extra">{{'extra' | translate}}</a>
-          </nav>
-        </div>
+      <div>
+        <h1>{{ "shape" | translate }}</h1>
+        <nav>
+          <a routerLink="sunglasses/round">{{ "round" | translate }}</a>
+          <a routerLink="sunglasses/rectangular">{{
+            "rectangular" | translate
+          }}</a>
+          <a routerLink="sunglasses/cateye">{{ "cateye" | translate }}</a>
+        </nav>
+      </div>
 
-        <div>
-          <h1>{{'shape' | translate}}</h1>
-          <nav>
-            <a routerLink="sunglasses/round">{{'round' | translate}}</a>
-            <a routerLink="sunglasses/rectangular">{{'rectangular' | translate}}</a>
-            <a routerLink="sunglasses/cateye">{{'cateye' | translate}}</a>
-          </nav>
-        </div>
-
-        <div class="menu-img">
-          <a routerLink="/custom-frames">
-          <img src="../assets/header/header-2.jpg" alt="">
+      <div class="menu-img">
+        <a routerLink="/custom-frames">
+          <img src="../assets/header/header-2.jpg" alt="" />
           <div class="menu-img-p">
             <p>
-              <span>
-                Our latest sunglasses
-              </span>
-              <br>
+              <span> Our latest sunglasses </span>
+              <br />
               Here you will find our current sunglasses
             </p>
           </div>
-          </a>
-        </div>
+        </a>
       </div>
+    </div>
 
-      <div [ngClass]="{'menu-active':activeMenu}"
-       *ngIf="collectionMenu"
-       [@fadeContent]="collectionMenu?'*':'void'">
-        <div class="menu-collection" *ngFor="let item of collectionData">
-          <h1>{{'collection' | translate}}</h1>
-          <a [routerLink]="item.path">
-            <img  src="{{item.ImgUrl}}" alt="{{item.name}}">
-            <p>{{"collectionData."+item.name| translate}}</p>
-          </a>
-        </div>
+    <div
+      [ngClass]="{ 'menu-active': activeMenu }"
+      *ngIf="collectionMenu"
+      [@fadeContent]="collectionMenu ? '*' : 'void'"
+    >
+      <div class="menu-collection" *ngFor="let item of collectionData">
+        <h1>{{ "collection" | translate }}</h1>
+        <a [routerLink]="item.path">
+          <img src="{{ item.ImgUrl }}" alt="{{ item.name }}" />
+          <p>{{ "collectionData." + item.name | translate }}</p>
+        </a>
       </div>
+    </div>
   </div>
 
-  <div class="header-bottom"
-  [@remove]="scrollEvent?'void':'*'">
+  <div class="header-bottom" [@remove]="scrollEvent ? 'void' : '*'">
     <h1><span>Permium eyewear.</span>Handmade in Berlin</h1>
-    <img src="../assets/logo/LOGO.jpg" alt="" id="discover">
+    <img src="../assets/logo/LOGO.jpg" alt="" id="discover" />
   </div>
 </div>
-

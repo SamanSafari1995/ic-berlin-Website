@@ -1,70 +1,75 @@
-<mat-sidenav-container [ngStyle]="{'position': drawer.opened?'fixed':'relative'}">
+<mat-sidenav-container
+  [ngStyle]="{ position: drawer.opened ? 'fixed' : 'relative' }"
+>
   <mat-sidenav #drawer mode="over">
     <div class="sidenave-content">
-        <div class="sidenav-title">
-          <h1>Filter</h1>
-          <button mat-button (click)="drawer.toggle()">
-                <mat-icon>
-                  close_small
-                </mat-icon>
-          </button>
+      <div class="sidenav-title">
+        <h1>Filter</h1>
+        <button mat-button (click)="drawer.toggle()">
+          <mat-icon> close_small </mat-icon>
+        </button>
+      </div>
+      <div class="filter">
+        <h2>{{ "material" | translate }}</h2>
+        <div class="span">
+          <span *ngFor="let item of material">
+            <input
+              type="button"
+              value="{{ item.value | translate }}"
+              (click)="getByChange(item.value)"
+            />
+          </span>
         </div>
-        <div class="filter">
-            <h2>{{"material" | translate}}</h2>
-            <div class="span">
-              <span *ngFor="let item of material">
-                <input type="button"
-                value="{{item.value | translate}}"
-                (click)="getByChange(item.value)">
-            </span>
-            </div>
+      </div>
+      <div class="filter">
+        <h2>{{ "shape" | translate }}</h2>
+        <div class="span">
+          <span *ngFor="let item of shape">
+            <input
+              type="button"
+              value="{{ item.value | translate }}"
+              (click)="getByChange(item.value)"
+            />
+          </span>
         </div>
-        <div class="filter">
-            <h2>{{"shape" | translate}}</h2>
-            <div class="span">
-              <span *ngFor="let item of shape">
-                <input type="button"
-                  value="{{item.value | translate}}"
-                  (click)="getByChange(item.value)">
-            </span>
-            </div>
+      </div>
+      <div class="filter">
+        <h2>{{ "size" | translate }}</h2>
+        <div class="span">
+          <span *ngFor="let item of size">
+            <input
+              type="button"
+              value="{{ item.value | translate }}"
+              (click)="getByChange(item.value)"
+            />
+          </span>
         </div>
-        <div class="filter">
-            <h2>{{"size" | translate}}</h2>
-            <div class="span">
-                <span *ngFor="let item of size">
-                  <input type="button"
-                    value="{{item.value | translate}}"
-                    (click)="getByChange(item.value)">
-                </span>
-            </div>
-        </div>
+      </div>
     </div>
-
   </mat-sidenav>
   <mat-sidenav-content>
-      <div class="sidenav">
-
-          <div class="title-co">
-            <a routerLink="/" class="logo">ic! berlin</a>
-            <h1 class="title">Products</h1>
-            <button class="filter-btn" mat-button (click)="drawer.toggle()">Filter</button>
-          </div>
-
-          <div class="container" >
-            <a href="" *ngFor="let item of glasses">
-              <div class="image">
-                <img class="firstImg" [src]="item.productImg1" alt="">
-                <img class="secondImg" [src]="item.productImg2" alt="">
-                <div class="details">
-                  <p class="c-name">{{item.collectionName}}</p>
-                  <p class="name">{{item.productName}}</p>
-                  <p class="color">{{item.color}}</p>
-                </div>
-              </div>
-            </a>
-          </div>
-
+    <div class="sidenav">
+      <div class="title-co">
+        <a routerLink="/" class="logo">ic! berlin</a>
+        <h1 class="title">Products</h1>
+        <button class="filter-btn" mat-button (click)="drawer.toggle()">
+          Filter
+        </button>
       </div>
+
+      <div class="container">
+        <a href="" *ngFor="let item of glasses">
+          <div class="image">
+            <img class="firstImg" [src]="item.productImg1" alt="" />
+            <img class="secondImg" [src]="item.productImg2" alt="" />
+            <div class="details">
+              <p class="c-name">{{ item.collectionName }}</p>
+              <p class="name">{{ item.productName }}</p>
+              <p class="color">{{ item.color }}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
