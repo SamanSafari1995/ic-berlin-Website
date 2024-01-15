@@ -6,7 +6,13 @@ import { SearchComponent } from './search.component';
 const routes:Routes = [
   {
     path:'',
-    component:SearchComponent
+    component:SearchComponent,
+    children:[
+      {
+        path:':productName',
+        component:SearchComponent
+      }
+    ]
   }
 ]
 

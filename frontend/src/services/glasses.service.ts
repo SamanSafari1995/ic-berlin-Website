@@ -1,79 +1,63 @@
 import { Injectable } from '@angular/core';
 import { Glasses } from 'src/app/models/glasses';
-import { sampleGlasses } from 'src/data';
-import { GetProduct } from 'src/app/interfaces/Iproduct';
-
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import {
+  COLLECTION_URL,
+  FILTERED_GLASSES_URL,
+  GLASSES_BY_NAME,
+  GLASSES_TYPE_URL,
+  GLASSES_URL,
+} from 'src/app/constant/urls';
+// import { GetProduct } from 'src/app/interfaces/Iproduct';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GlassesService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
-
-
-  getAll():Glasses[]{
-    return sampleGlasses;
+  getAll(): Observable<Glasses[]> {
+    return this.http.get<Glasses[]>(GLASSES_URL);
   }
 
-  getByType(type:string){
-    return this.getAll().filter(product=>{
-      return product.eyeWearType.toLowerCase() === type.toLowerCase()
-    })
+  getByType(type: string): Observable<Glasses[]> {
+    return this.http.get<Glasses[]>(GLASSES_TYPE_URL + type);
   }
 
-  getGlassesBySearch(search:string):Glasses[]{
-    return this.getAll()
-    .filter(
-      glass =>glass.productName.toLowerCase()
-      .includes(search.toLowerCase()))
+  getGlassesBySearch(search: string): Observable<Glasses[]> {
+    return this.http.get<Glasses[]>(GLASSES_BY_NAME + search);
   }
 
-  getGlassesByMaterial(type:string, material:string):Glasses[]{
-    return this.getByType(type)
-    .filter(
-      glass =>glass.material.toLowerCase()
-      .includes(material.toLowerCase()))
+  getGlassesByMaterial(type: string, material: string): Observable<Glasses[]> {
+    return this.http.get<Glasses[]>(
+      FILTERED_GLASSES_URL + type + '/' + material
+    );
   }
 
-
-  getGlassesByGender(type:string, gender:string):Glasses[]{
-    return this.getByType(type)
-    .filter(
-      glass =>
-        glass.gender.toLowerCase()
-        .includes(gender.toLowerCase())
-    )
+  getGlassesByGender(type: string, gender: string): Observable<Glasses[]> {
+    return this.http.get<Glasses[]>(FILTERED_GLASSES_URL + type + '/' + gender);
   }
 
-  getGlassesBySize(type:string, size:string):Glasses[]{
-    return this.getByType(type)
-    .filter(product =>
-      product.frameSize.toLowerCase()
-      .includes(size.toLowerCase()))
+  getGlassesBySize(type: string, size: string): Observable<Glasses[]> {
+    return this.http.get<Glasses[]>(FILTERED_GLASSES_URL + type + '/' + size);
   }
 
-
-  getGlassesByShape(type:string, shape:string):Glasses[]{
-    return this.getByType(type)
-    .filter(
-      glass =>glass.shape.toLowerCase().replace(/ +/g, "")
-      .includes(shape.toLowerCase()))
+  getGlassesByShape(type: string, shape: string): Observable<Glasses[]> {
+    return this.http.get<Glasses[]>(FILTERED_GLASSES_URL + type + '/' + shape);
   }
 
-  getByCollectionName(coName:string):Glasses[]{
-    return this.getAll().filter(
-      glass =>glass.collectionName.toLowerCase().replace(/ +g/,"")
-      .includes(coName.toLowerCase())
-    )
+  getByCollectionName(coName: string): Observable<Glasses[]> {
+    return this.http.get<Glasses[]>(COLLECTION_URL + coName);
   }
 
-  getNewObjOfProduct():GetProduct{
-    const obj = this.getAll().map(({productName, material})=> {
-      return {productName, material}
-    });
-    return obj
-  }
-
-
+  // getNewObjOfProduct():Observable<GetProduct>{
+  //   const obj = this.http.get<Glasses[]>(GLASSES_URL).subscribe((products) => {
+  //     products.map(pro => ({
+  //       productName: pro.productName,
+  //       material: pro.material
+  //     }))
+  //   });
+  //   return obj as unknown as Observable<GetProduct>
+  // }
 }

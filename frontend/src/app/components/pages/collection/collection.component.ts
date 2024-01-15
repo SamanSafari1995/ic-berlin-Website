@@ -36,8 +36,10 @@ export class CollectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(product=>{
-        this.collection = this.glassesService.getByCollectionName(product.name);
-        console.log(this.collection)
+        this.glassesService.getByCollectionName(product.name).subscribe(serverGlasses => {
+          this.collection = serverGlasses
+        });
+
     })
   }
 

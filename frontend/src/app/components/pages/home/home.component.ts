@@ -20,7 +20,9 @@ export class HomeComponent implements OnInit {
   hover = false;
 
   constructor(private glassesService:GlassesService){
-    this.glasses = glassesService.getAll();
+    glassesService.getAll().subscribe(serverGlass =>{
+      this.glasses = serverGlass
+    });
   }
 
   ngOnInit(): void {
